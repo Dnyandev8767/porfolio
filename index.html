@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- SEO Meta Tags -->
+  <title>Daphal Dnyandev | Full Stack Web Developer & BCS Student</title>
+  <meta name="description"
+    content="Professional portfolio of Daphal Dnyandev, a passionate BCS Student & Full Stack Web Developer from Sambhajinagar specializing in modern web applications, responsive UI/UX, JavaScript, React, and scalable backend architecture.">
+  <meta name="keywords"
+    content="Portfolio, Daphal Dnyandev, Full Stack Developer, Web Developer, BCS Student, Sambhajinagar, Frontend, Backend, JavaScript, React, Node.js, UI/UX">
+  <meta name="author" content="Daphal Dnyandev">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Daphal Dnyandev | Full Stack Web Developer Portfolio">
+  <meta property="og:description"
+    content="Explore projects, technical skills, and resume of Daphal Dnyandev, BCS Student and Full Stack Web Developer from Sambhajinagar.">
+  <meta property="og:image" content="assets/images/profile-dnyandev.jpg?v=2026">
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome CDN for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+
+<body>
+  <!-- Reading Progress Bar -->
+  <div id="scrollProgressBar" class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- 3D WebGL Background Canvas & 2D Ambient Glow Canvas -->
+  <canvas id="webglCanvas" class="webgl-canvas" aria-hidden="true"></canvas>
+  <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-header" id="navbar">
+    <div class="nav-container container">
+      <a href="#hero" class="brand-logo" aria-label="Daphal Dnyandev Portfolio Home">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">Dnyandev</span>
+        <span class="logo-accent">.dev</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+          <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> <span>About</span></a></li>
+          <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> <span>Skills</span></a></li>
+          <li><a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> <span>Projects</span></a>
+          </li>
+          <li><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> <span>Experience</span></a>
+          </li>
+          <li><a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Action Buttons -->
+      <div class="nav-actions">
+        <!-- 3D Scene Switcher -->
+        <button id="toggle3dModeBtn" class="action-btn toggle-3d-btn" aria-label="Switch 3D Scene"
+          title="Switch 3D Scene (Wave / Warp / Crystals)">
+          <i class="fa-solid fa-cube cube-icon"></i>
+          <span id="mode3dLabel" class="mode-3d-tag">3D: Wave</span>
+        </button>
+
+        <!-- Theme Switcher -->
+        <button id="themeToggleBtn" class="action-btn theme-toggle-btn" aria-label="Toggle dark and light theme"
+          title="Toggle theme">
+          <i class="fa-solid fa-moon moon-icon"></i>
+          <i class="fa-solid fa-sun sun-icon"></i>
+        </button>
+
+        <!-- Resume Modal Trigger -->
+        <button id="openResumeBtn" class="btn btn-outline nav-resume-btn" aria-label="View Resume">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>Resume</span>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false"
+          aria-controls="mobileDrawer">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobileDrawer" class="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">Dnyandev</span>
+        <span class="logo-accent">.dev</span>
+        <span class="logo-bracket">/&gt;</span>
+      </div>
+      <button id="closeMobileDrawerBtn" class="close-drawer-btn" aria-label="Close navigation menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#hero" class="mobile-link"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="#about" class="mobile-link"><i class="fa-solid fa-user"></i> About</a></li>
+      <li><a href="#skills" class="mobile-link"><i class="fa-solid fa-code"></i> Skills</a></li>
+      <li><a href="#projects" class="mobile-link"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
+      <li><a href="#experience" class="mobile-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+      <li><a href="#contact" class="mobile-link"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <button class="btn btn-outline w-full mb-3" id="dock3dModeBtn">
+        <i class="fa-solid fa-cube"></i> Switch 3D Background
+      </button>
+      <button class="btn btn-primary w-full" id="mobileResumeBtn">
+        <i class="fa-solid fa-file-pdf"></i> View Resume
+      </button>
+      <div class="mobile-socials">
+        <a href="https://github.com/dnyandevdaphal" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/dnyandev-daphal-530a01347" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X"><i
+            class="fa-brands fa-x-twitter"></i></a>
+        <a href="mailto:daphaldnyandev@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+  <div id="mobileBackdrop" class="mobile-backdrop" aria-hidden="true"></div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <!-- Availability Badge -->
+          <div class="status-badge" data-reveal>
+            <span class="status-indicator">
+              <span class="status-dot"></span>
+              <span class="status-ping"></span>
+            </span>
+            <span class="status-text">Available for Full-time Roles & Projects</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="hero-title" data-reveal>
+            Hi, I'm <span class="gradient-text">Daphal Dnyandev</span>
+          </h1>
+
+          <!-- Dynamic Typing Text -->
+          <div class="typing-container" data-reveal>
+            <span class="typing-prefix">I am a </span>
+            <span id="typedText" class="typed-text"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <!-- Hero Pitch -->
+          <p class="hero-description" data-reveal>
+            BCS Student & Full Stack Web Developer based in Sambhajinagar, dedicated to crafting modern,
+            ultra-responsive web experiences with clean code architecture, intuitive UI/UX design, and scalable web
+            solutions.
+          </p>
+
+          <!-- Hero CTA Buttons -->
+          <div class="hero-ctas" data-reveal>
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-glass">
+              <span>Let's Talk</span>
+              <i class="fa-solid fa-comments"></i>
+            </a>
+            <button class="btn btn-outline" id="heroCvBtn">
+              <i class="fa-solid fa-download"></i>
+              <span>Download CV</span>
+            </button>
+          </div>
+
+          <!-- Quick Social Links & Tech Quick Look -->
+          <div class="hero-social-bar" data-reveal>
+            <span class="social-label">Connect:</span>
+            <div class="social-links-group">
+              <a href="https://github.com/dnyandevdaphal" target="_blank" rel="noopener noreferrer"
+                class="social-icon-btn github-btn" aria-label="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/dnyandev-daphal-530a01347" target="_blank" rel="noopener noreferrer"
+                class="social-icon-btn linkedin-btn" aria-label="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                class="social-icon-btn twitter-btn" aria-label="Twitter / X Profile">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <button class="social-icon-btn email-btn" id="heroCopyEmailBtn" aria-label="Copy Email Address"
+                title="Copy Email">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="tooltip" id="emailTooltip">Copy Email</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Profile Card -->
+        <div class="hero-visual" data-reveal>
+          <div class="visual-glow-halo"></div>
+          <div class="visual-glow-secondary"></div>
+
+          <div class="profile-card-3d" id="profile3dCard">
+            <!-- Dynamic Mouse Glare Reflection on Glass Frame -->
+            <div class="card-glare-effect" aria-hidden="true"></div>
+
+            <!-- Profile Image Container: 100% Crisp, Clear & Unobstructed -->
+            <div class="profile-image-wrapper">
+              <img src="assets/images/profile-dnyandev.jpg?v=2026" alt="Daphal Dnyandev - Full Stack Developer"
+                class="profile-avatar-img" width="480" height="480" loading="eager">
+              <div class="image-shimmer-sweep"></div>
+            </div>
+
+            <!-- Floating Badge 1: Specialization (Cleanly to the Left Outside the Photo) -->
+            <div class="floating-badge badge-flank-left badge-top-left float-anim-1" data-badge="experience"
+              title="Click to view experience">
+              <div class="badge-icon icon-cyan">
+                <i class="fa-solid fa-code"></i>
+                <span class="icon-pulse-wave"></span>
+              </div>
+              <div class="badge-info">
+                <span class="badge-number">Full Stack</span>
+                <span class="badge-sub">Web Developer</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2: Academic Status (Cleanly to the Right Outside the Photo) -->
+            <div class="floating-badge badge-flank-right badge-bottom-right float-anim-2" data-badge="projects"
+              title="Click to view education & projects">
+              <div class="badge-icon icon-purple">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span class="icon-pulse-wave"></span>
+              </div>
+              <div class="badge-info">
+                <span class="badge-number">BCS Student</span>
+                <span class="badge-sub">Sambhajinagar</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge 3: Engineering Standard (Cleanly Below the Photo) -->
+            <div class="floating-badge badge-flank-bottom badge-bottom-center float-anim-3" data-badge="quality"
+              title="Click to view technical skills">
+              <div class="badge-icon icon-emerald">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span class="icon-pulse-wave"></span>
+              </div>
+              <div class="badge-info">
+                <span class="badge-number">Modern UI/UX</span>
+                <span class="badge-sub">Clean Architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#stats" class="scroll-down-indicator" aria-label="Scroll to Next Section">
+        <span class="mouse-icon">
+          <span class="mouse-wheel"></span>
+        </span>
+        <span class="scroll-text">Scroll to explore</span>
+      </a>
+    </section>
+
+    <!-- METRICS & HIGHLIGHTS BAR -->
+    <section id="stats" class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card" data-reveal>
+            <div class="stat-icon-box"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="stat-meta">
+              <div class="stat-number-wrapper">
+                <span class="counter" data-target="25">0</span><span class="stat-plus">+</span>
+              </div>
+              <p class="stat-label">Projects Completed</p>
+            </div>
+          </div>
+
+          <div class="stat-card" data-reveal>
+            <div class="stat-icon-box"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <div class="stat-meta">
+              <div class="stat-number-wrapper">
+                <span class="counter" data-target="3">0</span><span class="stat-plus">+</span>
+              </div>
+              <p class="stat-label">Years of Experience</p>
+            </div>
+          </div>
+
+          <div class="stat-card" data-reveal>
+            <div class="stat-icon-box"><i class="fa-solid fa-code-commit"></i></div>
+            <div class="stat-meta">
+              <div class="stat-number-wrapper">
+                <span class="counter" data-target="1500">0</span><span class="stat-plus">+</span>
+              </div>
+              <p class="stat-label">Git Commits</p>
+            </div>
+          </div>
+
+          <div class="stat-card" data-reveal>
+            <div class="stat-icon-box"><i class="fa-solid fa-face-smile"></i></div>
+            <div class="stat-meta">
+              <div class="stat-number-wrapper">
+                <span class="counter" data-target="99">0</span><span class="stat-plus">%</span>
+              </div>
+              <p class="stat-label">Client Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-tag"><i class="fa-solid fa-user-astronaut"></i> Discover</span>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+          <p class="section-subtitle">Bridging design aesthetics and high-performance software engineering.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column: Quick Profile Card & Core Details -->
+          <div class="about-card-left" data-reveal>
+            <div class="glass-card profile-details-card">
+              <div class="card-chip-header">
+                <span class="chip-status"><i class="fa-solid fa-circle-check"></i> Verified Profile</span>
+                <span class="chip-tag">Full Stack</span>
+              </div>
+
+              <div class="about-avatar-row">
+                <img src="assets/images/profile-dnyandev.jpg?v=2026" alt="Daphal Dnyandev profile thumbnail"
+                  class="about-thumb-img">
+                <div>
+                  <h3 class="about-person-name">Daphal Dnyandev</h3>
+                  <p class="about-person-title">Full Stack Web Developer & BCS Student</p>
+                </div>
+              </div>
+
+              <div class="personal-info-list">
+                <div class="info-row">
+                  <span class="info-key"><i class="fa-solid fa-location-dot"></i> Location:</span>
+                  <span class="info-val">Sambhajinagar, Maharashtra, India</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-key"><i class="fa-solid fa-graduation-cap"></i> Degree:</span>
+                  <span class="info-val">Bachelor of Computer Science (BCS)</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-key"><i class="fa-solid fa-phone"></i> Phone:</span>
+                  <a href="tel:+918767774541" class="info-val link-accent">+91 8767774541</a>
+                </div>
+                <div class="info-row">
+                  <span class="info-key"><i class="fa-solid fa-envelope"></i> Email:</span>
+                  <a href="mailto:daphaldnyandev@gmail.com" class="info-val link-accent">daphaldnyandev@gmail.com</a>
+                </div>
+                <div class="info-row">
+                  <span class="info-key"><i class="fa-solid fa-language"></i> Languages:</span>
+                  <span class="info-val">English, Hindi, Marathi</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-key"><i class="fa-solid fa-briefcase"></i> Status:</span>
+                  <span class="info-val text-success">Open for Roles & Projects</span>
+                </div>
+              </div>
+
+              <div class="about-card-actions">
+                <a href="#contact" class="btn btn-primary btn-sm w-full">
+                  <i class="fa-solid fa-envelope-open-text"></i> Send a Message
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Story Tabs -->
+          <div class="about-tabs-container" data-reveal>
+            <div class="tabs-nav-bar" role="tablist" aria-label="About Tabs">
+              <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tabStory" id="tabBtnStory">
+                <i class="fa-solid fa-book-open"></i> My Story
+              </button>
+              <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tabPhilosophy"
+                id="tabBtnPhilosophy">
+                <i class="fa-solid fa-lightbulb"></i> Philosophy
+              </button>
+              <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tabServices" id="tabBtnServices">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> What I Deliver
+              </button>
+            </div>
+
+            <!-- Tab 1: Story -->
+            <div class="tab-pane active" id="tabStory" role="tabpanel" aria-labelledby="tabBtnStory">
+              <div class="tab-content-box">
+                <h3 class="tab-heading">Engineering digital products that leave an impact.</h3>
+                <p class="tab-text">
+                  I am a passionate software engineer with a deep fascination for building products at the intersection
+                  of beautiful design, robust engineering, and smooth user interactions. My journey started with a
+                  curiosity about how the web operates, which quickly evolved into building full-scale web applications.
+                </p>
+                <p class="tab-text">
+                  Over the years, I've developed applications ranging from interactive AI dashboards and high-converting
+                  e-commerce web applications to real-time collaboration platforms. I love turning complex ideas into
+                  clean, maintainable, and high-performance code.
+                </p>
+                <div class="highlights-pill-grid">
+                  <div class="highlight-pill"><i class="fa-solid fa-bolt"></i> Fast Page Load Times</div>
+                  <div class="highlight-pill"><i class="fa-solid fa-mobile-screen"></i> 100% Mobile Responsive</div>
+                  <div class="highlight-pill"><i class="fa-solid fa-shield-virus"></i> Security Best Practices</div>
+                  <div class="highlight-pill"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO Optimized</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 2: Philosophy -->
+            <div class="tab-pane" id="tabPhilosophy" role="tabpanel" aria-labelledby="tabBtnPhilosophy">
+              <div class="tab-content-box">
+                <h3 class="tab-heading">Clean code, user empathy, and relentless curiosity.</h3>
+                <div class="philosophy-cards">
+                  <div class="philosophy-item">
+                    <div class="philo-icon"><i class="fa-solid fa-gem"></i></div>
+                    <div>
+                      <h4>User-Centric Architecture</h4>
+                      <p>Every line of code and UI component should serve a tangible user benefit with intuitive
+                        navigation and frictionless interactions.</p>
+                    </div>
+                  </div>
+                  <div class="philosophy-item">
+                    <div class="philo-icon"><i class="fa-solid fa-code-branch"></i></div>
+                    <div>
+                      <h4>Maintainable & Modular</h4>
+                      <p>Writing DRY, well-documented, testable code that teams can scale confidently without technical
+                        debt.</p>
+                    </div>
+                  </div>
+                  <div class="philosophy-item">
+                    <div class="philo-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                    <div>
+                      <h4>Performance By Default</h4>
+                      <p>Obsessed with Lighthouse 95+ scores, efficient bundle sizes, optimized assets, and silky 60fps
+                        animations.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 3: What I Deliver -->
+            <div class="tab-pane" id="tabServices" role="tabpanel" aria-labelledby="tabBtnServices">
+              <div class="tab-content-box">
+                <h3 class="tab-heading">Comprehensive Engineering & Design Capabilities</h3>
+                <div class="services-grid">
+                  <div class="service-box">
+                    <i class="fa-solid fa-desktop service-icon"></i>
+                    <h4>Frontend Development</h4>
+                    <p>Modern interactive SPAs, responsive web design, state management, and design systems using React,
+                      Next.js, and CSS3.</p>
+                  </div>
+                  <div class="service-box">
+                    <i class="fa-solid fa-server service-icon"></i>
+                    <h4>Backend & REST APIs</h4>
+                    <p>Scalable server architecture, authentication (JWT/OAuth), microservices, and database modeling
+                      with Node.js and Python.</p>
+                  </div>
+                  <div class="service-box">
+                    <i class="fa-solid fa-database service-icon"></i>
+                    <h4>Database & Cloud</h4>
+                    <p>Relational (PostgreSQL, MySQL) and NoSQL (MongoDB) schemas, Redis caching, Docker
+                      containerization, and AWS/Vercel deployment.</p>
+                  </div>
+                  <div class="service-box">
+                    <i class="fa-solid fa-palette service-icon"></i>
+                    <h4>UI/UX & Prototyping</h4>
+                    <p>Wireframing, accessibility (WCAG), glassmorphism, micro-interactions, and conversion-focused web
+                      layouts.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-tag"><i class="fa-solid fa-screwdriver-wrench"></i> Stack</span>
+          <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+          <p class="section-subtitle">A comprehensive toolkit honed through hands-on production builds and continuous
+            learning.</p>
+        </div>
+
+        <!-- Skill Filters -->
+        <div class="skill-filters" data-reveal>
+          <button class="filter-chip active" data-category="all">All Skills</button>
+          <button class="filter-chip" data-category="frontend">Frontend</button>
+          <button class="filter-chip" data-category="backend">Backend & APIs</button>
+          <button class="filter-chip" data-category="database">Databases & Cloud</button>
+          <button class="filter-chip" data-category="tools">Tools & DevOps</button>
+        </div>
+
+        <!-- Skills Grid with Animated Bars -->
+        <div class="skills-grid" id="skillsGrid" data-reveal>
+          <!-- Frontend: HTML5 / Modern CSS3 -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-meta">
+                <i class="fa-brands fa-html5 skill-icon text-orange"></i>
+                <span class="skill-name">HTML5 / Modern CSS3</span>
+              </div>
+              <span class="skill-percentage">95%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" data-width="95%"></div>
+            </div>
+            <p class="skill-desc">Semantic markup, CSS Grid, Flexbox, Animations, Glassmorphism & Responsive Design</p>
+          </div>
+
+          <!-- Frontend: JavaScript ES6+ -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-meta">
+                <i class="fa-brands fa-js skill-icon text-yellow"></i>
+                <span class="skill-name">JavaScript (ES6+)</span>
+              </div>
+              <span class="skill-percentage">92%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" data-width="92%"></div>
+            </div>
+            <p class="skill-desc">Asynchronous programming, Closures, DOM manipulation, Event loop, Form validations</p>
+          </div>
+
+          <!-- Frontend: React.js -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-meta">
+                <i class="fa-brands fa-react skill-icon text-cyan"></i>
+                <span class="skill-name">React.js & Hooks</span>
+              </div>
+              <span class="skill-percentage">90%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" data-width="90%"></div>
+            </div>
+            <p class="skill-desc">Custom hooks, Context API, state machines, component lifecycle, performance
+              memoization</p>
+          </div>
+
+          <!-- Frontend: TypeScript -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-meta">
+                <i class="fa-solid fa-code skill-icon text-blue"></i>
+                <span class="skill-name">TypeScript</span>
+              </div>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" data-width="85%"></div>
+            </div>
+            <p class="skill-desc">Strict type safety, Generics, interfaces, modular typing, and compile-time validation
+            </p>
+          </div>
+
+          <!-- Backend: Node.js & Express -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-meta">
+                <i class="fa-brands fa-node-js skill-icon text-green"></i>
+                <span class="skill-name">Node.js & Express</span>
+              </div>
+              <span class="skill-percentage">88%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" data-width="88%"></div>
+            </div>
+            <p class="skill-desc">RESTful API design, Middleware, JWT Auth, streaming, WebSockets, rate limiting</p>
+          </div>
+
+          <!-- Backend: Python -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-meta">
+                <i class="fa-brands fa-python skill-icon text-yellow"></i>
+                <span class="skill-name">Python & FastAPI</span>
+              </div>
+              <span class="skill-percentage">82%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" data-width="82%"></div>
+            </div>
+            <p class="skill-desc">Async APIs, data processing, backend automation, API routing, Pydantic validation</p>
+          </div>
+
+          <!-- Database: PostgreSQL & SQL -->
+          <div class="skill-card" data-category="database">
+            <div class="skill-header">
+              <div class="skill-meta">
+                <i class="fa-solid fa-database skill-icon text-blue"></i>
+                <span class="skill-name">PostgreSQL & SQL</span>
+              </div>
+              <span class="skill-percentage">86%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" data-width="86%"></div>
+            </div>
+            <p class="skill-desc">Relational modeling, indexing, joins, Prisma ORM, migrations, query optimization</p>
+          </div>
+
+          <!-- Database: MongoDB -->
+          <div class="skill-card" data-category="database">
+            <div class="skill-header">
+              <div class="skill-meta">
+                <i class="fa-solid fa-leaf skill-icon text-green"></i>
+                <span class="skill-name">MongoDB & Mongoose</span>
+              </div>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" data-width="85%"></div>
+            </div>
+            <p class="skill-desc">Document schemas, aggregation pipelines, replica sets, Atlas cloud hosting</p>
+          </div>
+
+          <!-- Tools: Git & GitHub -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-header">
+              <div class="skill-meta">
+                <i class="fa-brands fa-git-alt skill-icon text-orange"></i>
+                <span class="skill-name">Git & GitHub</span>
+              </div>
+              <span class="skill-percentage">92%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" data-width="92%"></div>
+            </div>
+            <p class="skill-desc">Branching workflows, pull request reviews, merge resolution, Git Actions CI/CD</p>
+          </div>
+
+          <!-- Tools: Docker & DevOps -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-header">
+              <div class="skill-meta">
+                <i class="fa-brands fa-docker skill-icon text-cyan"></i>
+                <span class="skill-name">Docker & Containerization</span>
+              </div>
+              <span class="skill-percentage">80%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-bar" data-width="80%"></div>
+            </div>
+            <p class="skill-desc">Dockerfile creation, multi-container compose, environment reproducibility</p>
+          </div>
+        </div>
+
+        <!-- Interactive Tech Badges Cloud -->
+        <div class="tech-cloud-container" data-reveal>
+          <h4 class="tech-cloud-title">Additional Technologies & Frameworks</h4>
+          <div class="tech-tags-cloud">
+            <span class="tech-pill"><i class="fa-solid fa-code"></i> Next.js 14</span>
+            <span class="tech-pill"><i class="fa-solid fa-cubes"></i> Redux Toolkit</span>
+            <span class="tech-pill"><i class="fa-solid fa-wind"></i> TailwindCSS</span>
+            <span class="tech-pill"><i class="fa-solid fa-bolt"></i> Vite</span>
+            <span class="tech-pill"><i class="fa-solid fa-network-wired"></i> GraphQL</span>
+            <span class="tech-pill"><i class="fa-solid fa-memory"></i> Redis</span>
+            <span class="tech-pill"><i class="fa-brands fa-aws"></i> AWS S3 & EC2</span>
+            <span class="tech-pill"><i class="fa-solid fa-server"></i> Nginx</span>
+            <span class="tech-pill"><i class="fa-solid fa-vial"></i> Jest & Testing</span>
+            <span class="tech-pill"><i class="fa-brands fa-figma"></i> Figma UI/UX</span>
+            <span class="tech-pill"><i class="fa-brands fa-linux"></i> Linux / Bash</span>
+            <span class="tech-pill"><i class="fa-solid fa-lock"></i> OAuth / JWT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-tag"><i class="fa-solid fa-folder-open"></i> Portfolio</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-subtitle">Real-world applications showcasing responsive design, clean code, and interactive
+            problem solving.</p>
+        </div>
+
+        <!-- Project Category Filters -->
+        <div class="project-filters" data-reveal>
+          <button class="project-filter-btn active" data-filter="all">All Projects (6)</button>
+          <button class="project-filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="project-filter-btn" data-filter="frontend">Frontend / SaaS</button>
+          <button class="project-filter-btn" data-filter="fintech">FinTech & Health</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1: NeuroAnalytix (AI SaaS) -->
+          <article class="project-card" data-category="fullstack frontend" data-reveal>
+            <div class="project-image-box">
+              <img src="assets/images/project-saas.jpg" alt="NeuroAnalytix AI SaaS Analytics Dashboard"
+                class="project-img" loading="lazy">
+              <div class="project-badge">Featured SaaS</div>
+              <div class="project-overlay">
+                <button class="overlay-btn view-details-btn" data-project="neuroanalytix"
+                  aria-label="View Project Case Study">
+                  <i class="fa-solid fa-eye"></i> View Case Study
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Chart.js</span>
+              </div>
+              <h3 class="project-title">NeuroAnalytix — AI SaaS Analytics Dashboard</h3>
+              <p class="project-desc">
+                High-performance dashboard tracking AI model accuracy, data throughput, and automated anomaly detection
+                with interactive charts.
+              </p>
+              <div class="project-footer">
+                <button class="btn btn-sm btn-primary view-details-btn" data-project="neuroanalytix">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline"
+                  aria-label="GitHub Source">
+                  <i class="fa-brands fa-github"></i> Source
+                </a>
+                <button class="btn btn-sm btn-glass live-demo-trigger" data-project="neuroanalytix"
+                  aria-label="Live Demo Preview">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: NeoGear (E-Commerce) -->
+          <article class="project-card" data-category="fullstack" data-reveal>
+            <div class="project-image-box">
+              <img src="assets/images/project-ecommerce.jpg" alt="NeoGear Cyber Modern E-Commerce Store"
+                class="project-img" loading="lazy">
+              <div class="project-badge">E-Commerce</div>
+              <div class="project-overlay">
+                <button class="overlay-btn view-details-btn" data-project="neogear"
+                  aria-label="View Project Case Study">
+                  <i class="fa-solid fa-eye"></i> View Case Study
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">Next.js</span>
+                <span class="tag">Stripe API</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Zustand</span>
+              </div>
+              <h3 class="project-title">NeoGear — Next-Gen Cyber Hardware Store</h3>
+              <p class="project-desc">
+                Ultrafast e-commerce experience featuring interactive cart drawer, real-time stock balance, customer
+                reviews, and secure Stripe checkout.
+              </p>
+              <div class="project-footer">
+                <button class="btn btn-sm btn-primary view-details-btn" data-project="neogear">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline"
+                  aria-label="GitHub Source">
+                  <i class="fa-brands fa-github"></i> Source
+                </a>
+                <button class="btn btn-sm btn-glass live-demo-trigger" data-project="neogear"
+                  aria-label="Live Demo Preview">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: DevFlow (Collaborative IDE & Kanban) -->
+          <article class="project-card" data-category="fullstack frontend" data-reveal>
+            <div class="project-image-box">
+              <img src="assets/images/project-collab.jpg" alt="DevFlow Realtime Developer Collaboration Tool"
+                class="project-img" loading="lazy">
+              <div class="project-badge">WebSockets</div>
+              <div class="project-overlay">
+                <button class="overlay-btn view-details-btn" data-project="devflow"
+                  aria-label="View Project Case Study">
+                  <i class="fa-solid fa-eye"></i> View Case Study
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">WebSockets</span>
+                <span class="tag">Monaco Editor</span>
+                <span class="tag">Express</span>
+                <span class="tag">Redis</span>
+              </div>
+              <h3 class="project-title">DevFlow — Real-Time Developer Workspace</h3>
+              <p class="project-desc">
+                Multi-user synchronized code editor with multiplayer cursor presence, integrated agile Kanban task
+                board, and web terminal runner.
+              </p>
+              <div class="project-footer">
+                <button class="btn btn-sm btn-primary view-details-btn" data-project="devflow">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline"
+                  aria-label="GitHub Source">
+                  <i class="fa-brands fa-github"></i> Source
+                </a>
+                <button class="btn btn-sm btn-glass live-demo-trigger" data-project="devflow"
+                  aria-label="Live Demo Preview">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: AuraFin (Fintech Wealth Dashboard) -->
+          <article class="project-card" data-category="fintech" data-reveal>
+            <div class="project-image-box">
+              <img src="assets/images/project-fintech.jpg" alt="AuraFin Crypto & Stock Investment Dashboard"
+                class="project-img" loading="lazy">
+              <div class="project-badge">FinTech</div>
+              <div class="project-overlay">
+                <button class="overlay-btn view-details-btn" data-project="aurafin"
+                  aria-label="View Project Case Study">
+                  <i class="fa-solid fa-eye"></i> View Case Study
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">JavaScript ES6</span>
+                <span class="tag">Financial APIs</span>
+                <span class="tag">Canvas</span>
+                <span class="tag">CSS Grid</span>
+              </div>
+              <h3 class="project-title">AuraFin — Wealth & Stock Analytics Dashboard</h3>
+              <p class="project-desc">
+                Real-time stock ticker analysis, crypto wallet valuation, responsive P&L graph indicators, and
+                transaction history filtering.
+              </p>
+              <div class="project-footer">
+                <button class="btn btn-sm btn-primary view-details-btn" data-project="aurafin">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline"
+                  aria-label="GitHub Source">
+                  <i class="fa-brands fa-github"></i> Source
+                </a>
+                <button class="btn btn-sm btn-glass live-demo-trigger" data-project="aurafin"
+                  aria-label="Live Demo Preview">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: MediVita (Healthcare & Patient Portal) -->
+          <article class="project-card" data-category="fintech fullstack" data-reveal>
+            <div class="project-image-box">
+              <img src="assets/images/project-health.jpg" alt="MediVita Telemedicine Patient Wellness Portal"
+                class="project-img" loading="lazy">
+              <div class="project-badge">HealthTech</div>
+              <div class="project-overlay">
+                <button class="overlay-btn view-details-btn" data-project="medivita"
+                  aria-label="View Project Case Study">
+                  <i class="fa-solid fa-eye"></i> View Case Study
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Telemetry</span>
+              </div>
+              <h3 class="project-title">MediVita — Telehealth & Patient Wellness Portal</h3>
+              <p class="project-desc">
+                Doctor-patient portal with real-time biometric telemetry charts, emergency thresholds, medical
+                appointment booking, and encrypted records.
+              </p>
+              <div class="project-footer">
+                <button class="btn btn-sm btn-primary view-details-btn" data-project="medivita">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline"
+                  aria-label="GitHub Source">
+                  <i class="fa-brands fa-github"></i> Source
+                </a>
+                <button class="btn btn-sm btn-glass live-demo-trigger" data-project="medivita"
+                  aria-label="Live Demo Preview">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Responsive Portfolio Engine -->
+          <article class="project-card" data-category="frontend" data-reveal>
+            <div class="project-image-box">
+              <img src="assets/images/profile-dnyandev.jpg?v=2026" alt="Developer Portfolio Engine Showcase"
+                class="project-img" loading="lazy">
+              <div class="project-badge">Showcase</div>
+              <div class="project-overlay">
+                <button class="overlay-btn view-details-btn" data-project="portfolio"
+                  aria-label="View Project Case Study">
+                  <i class="fa-solid fa-eye"></i> View Case Study
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">Vanilla CSS</span>
+                <span class="tag">ES6 JavaScript</span>
+                <span class="tag">Canvas</span>
+              </div>
+              <h3 class="project-title">Engineered Portfolio — Speed & Responsiveness</h3>
+              <p class="project-desc">
+                Zero heavy dependencies, 100% responsive architecture, custom dark/light theme engine, live form
+                validator, and dynamic canvas backdrop.
+              </p>
+              <div class="project-footer">
+                <button class="btn btn-sm btn-primary view-details-btn" data-project="portfolio">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </button>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline"
+                  aria-label="GitHub Source">
+                  <i class="fa-brands fa-github"></i> Source
+                </a>
+                <button class="btn btn-sm btn-glass live-demo-trigger" data-project="portfolio"
+                  aria-label="Live Demo Preview">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION TIMELINE -->
+    <section id="experience" class="section timeline-section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-tag"><i class="fa-solid fa-timeline"></i> Journey</span>
+          <h2 class="section-title">Experience & <span class="gradient-text">Education</span></h2>
+          <p class="section-subtitle">A chronological track record of roles, technical contributions, and
+            qualifications.</p>
+        </div>
+
+        <!-- Timeline Mode Switcher -->
+        <div class="timeline-switcher-container" data-reveal>
+          <div class="timeline-switcher">
+            <button class="timeline-btn active" id="btnShowExperience">
+              <i class="fa-solid fa-briefcase"></i> Work Experience
+            </button>
+            <button class="timeline-btn" id="btnShowEducation">
+              <i class="fa-solid fa-graduation-cap"></i> Education & Certs
+            </button>
+          </div>
+        </div>
+
+        <!-- Work Experience Timeline -->
+        <div class="timeline-tree active" id="experienceTimeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-node" data-reveal>
+            <div class="timeline-dot"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-date"><i class="fa-regular fa-calendar"></i> 2024 — Present</div>
+              <h3 class="timeline-role">Senior Full Stack Web Developer</h3>
+              <h4 class="timeline-org"><i class="fa-solid fa-building"></i> TechNova Innovations • Sambhajinagar /
+                Remote</h4>
+              <p class="timeline-desc">
+                Architecting high-scale web applications, creating modular UI components, optimizing page load speeds by
+                42%, and mentoring junior software engineers.
+              </p>
+              <div class="timeline-pills">
+                <span>React.js</span>
+                <span>Node.js</span>
+                <span>TypeScript</span>
+                <span>PostgreSQL</span>
+                <span>Docker</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-node" data-reveal>
+            <div class="timeline-dot"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-date"><i class="fa-regular fa-calendar"></i> 2022 — 2024</div>
+              <h3 class="timeline-role">Frontend Software Engineer</h3>
+              <h4 class="timeline-org"><i class="fa-solid fa-building"></i> PixelCraft Digital Studio • Remote</h4>
+              <p class="timeline-desc">
+                Developed responsive web applications for enterprise clients, integrated REST & GraphQL APIs,
+                implemented accessibility standards (WCAG 2.1 AA), and boosted SEO visibility.
+              </p>
+              <div class="timeline-pills">
+                <span>JavaScript ES6+</span>
+                <span>CSS3 Flex/Grid</span>
+                <span>Tailwind</span>
+                <span>REST APIs</span>
+                <span>Git</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-node" data-reveal>
+            <div class="timeline-dot"><i class="fa-solid fa-terminal"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-date"><i class="fa-regular fa-calendar"></i> 2021 — 2022</div>
+              <h3 class="timeline-role">Web Development Intern</h3>
+              <h4 class="timeline-org"><i class="fa-solid fa-building"></i> InnoTech Labs</h4>
+              <p class="timeline-desc">
+                Assisted in writing interactive JavaScript modules, dynamic form validation, cross-browser compatibility
+                testing, and bug fixing across client landing pages.
+              </p>
+              <div class="timeline-pills">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Bootstrap</span>
+                <span>Form Validation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Timeline (Hidden by default, switched via JS) -->
+        <div class="timeline-tree" id="educationTimeline" style="display: none;">
+          <!-- Edu Item 1 -->
+          <div class="timeline-node" data-reveal>
+            <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-date"><i class="fa-regular fa-calendar"></i> Current / BCS Student</div>
+              <h3 class="timeline-role">Bachelor of Computer Science (BCS)</h3>
+              <h4 class="timeline-org"><i class="fa-solid fa-university"></i> Dr. Babasaheb Ambedkar Marathwada
+                University (BAMU), Sambhajinagar</h4>
+              <p class="timeline-desc">
+                Focusing on Full Stack Web Development, Computer Science fundamentals, Web Technologies, Database
+                Management Systems, and Modern JavaScript Applications.
+              </p>
+              <div class="timeline-pills">
+                <span>Data Structures</span>
+                <span>DBMS</span>
+                <span>Computer Networks</span>
+                <span>Software Engineering</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Edu Item 2 -->
+          <div class="timeline-node" data-reveal>
+            <div class="timeline-dot"><i class="fa-solid fa-certificate"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-date"><i class="fa-regular fa-calendar"></i> 2023</div>
+              <h3 class="timeline-role">Meta Full Stack Developer Professional Certificate</h3>
+              <h4 class="timeline-org"><i class="fa-solid fa-award"></i> Meta / Coursera</h4>
+              <p class="timeline-desc">
+                Comprehensive training covering modern frontend engineering with React, backend architecture with
+                Python/Django, API design, version control, and CI/CD pipelines.
+              </p>
+              <div class="timeline-pills">
+                <span>React Advanced</span>
+                <span>REST Framework</span>
+                <span>Cloud Deployment</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Edu Item 3 -->
+          <div class="timeline-node" data-reveal>
+            <div class="timeline-dot"><i class="fa-solid fa-cloud"></i></div>
+            <div class="timeline-card">
+              <div class="timeline-date"><i class="fa-regular fa-calendar"></i> 2024</div>
+              <h3 class="timeline-role">AWS Certified Solutions Architect – Associate</h3>
+              <h4 class="timeline-org"><i class="fa-solid fa-award"></i> Amazon Web Services</h4>
+              <p class="timeline-desc">
+                Validated expertise in designing resilient, highly available, cost-effective cloud architectures on AWS
+                (S3, EC2, CloudFront, Lambda, RDS).
+              </p>
+              <div class="timeline-pills">
+                <span>AWS Cloud</span>
+                <span>Serverless</span>
+                <span>Security</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS / RECOMMENDATIONS -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-tag"><i class="fa-solid fa-comment-dots"></i> Endorsements</span>
+          <h2 class="section-title">What Colleagues <span class="gradient-text">Say</span></h2>
+          <p class="section-subtitle">Real feedback from clients, mentors, and engineering collaborators.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card" data-reveal>
+            <div class="stars-row">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">
+              "Dnyandev is an exceptional developer who cares deeply about both user experience and code quality. He
+              delivered our e-commerce dashboard ahead of schedule with zero UI glitches."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><i class="fa-solid fa-user-tie"></i></div>
+              <div>
+                <h4 class="author-name">Rahul Sharma</h4>
+                <p class="author-role">Engineering Lead, TechNova</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-reveal>
+            <div class="stars-row">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">
+              "His attention to detail on CSS responsiveness and JavaScript validation is remarkable. He transformed our
+              complex designs into a lightning-fast, accessible web application."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+              <div>
+                <h4 class="author-name">Priya Patel</h4>
+                <p class="author-role">Product Designer, PixelCraft</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-reveal>
+            <div class="stars-row">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">
+              "Great communication, top-tier problem solving, and clean code documentation. Any engineering team looking
+              for a proactive full stack developer would be lucky to have him."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><i class="fa-solid fa-user-ninja"></i></div>
+              <div>
+                <h4 class="author-name">Anand Kulkarni</h4>
+                <p class="author-role">Founder & CTO, SaaSStream</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION WITH INTERACTIVE FORM & VALIDATION -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-tag"><i class="fa-solid fa-envelope-circle-check"></i> Get In Touch</span>
+          <h2 class="section-title">Let's Connect & <span class="gradient-text">Collaborate</span></h2>
+          <p class="section-subtitle">Have a project in mind, a full-time opportunity, or want to discuss modern web
+            tech? Drop a message!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Contact Details Cards -->
+          <div class="contact-info-panel" data-reveal>
+            <div class="contact-info-card">
+              <div class="contact-card-icon icon-cyan">
+                <i class="fa-solid fa-envelope-open"></i>
+              </div>
+              <div class="contact-card-meta">
+                <h3 class="contact-card-title">Email Directly</h3>
+                <p class="contact-card-value"><a href="mailto:daphaldnyandev@gmail.com"
+                    style="color: inherit; text-decoration: none;">daphaldnyandev@gmail.com</a></p>
+                <button class="btn-copy-card" id="btnCopyEmailCard" title="Copy email address">
+                  <i class="fa-regular fa-copy"></i>
+                  <span id="copyBtnText">Copy Email Address</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-card-icon icon-emerald">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-card-meta">
+                <h3 class="contact-card-title">Phone & WhatsApp</h3>
+                <p class="contact-card-value"><a href="tel:+918767774541"
+                    style="color: inherit; text-decoration: none;">+91 8767774541</a></p>
+                <span class="contact-card-sub">Available for inquiries & project calls</span>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-card-icon icon-purple">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-card-meta">
+                <h3 class="contact-card-title">Location</h3>
+                <p class="contact-card-value">Sambhajinagar, Maharashtra, India</p>
+                <span class="contact-card-sub">Open to on-site, hybrid & remote work</span>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-card-icon icon-cyan">
+                <i class="fa-solid fa-business-time"></i>
+              </div>
+              <div class="contact-card-meta">
+                <h3 class="contact-card-title">Response Rate</h3>
+                <p class="contact-card-value">Within 2 to 6 Hours</p>
+                <span class="contact-card-sub">Mon — Sat, 9:00 AM — 7:00 PM IST</span>
+              </div>
+            </div>
+
+            <!-- Social Links Grid in Contact -->
+            <div class="contact-social-box">
+              <h4 class="social-box-title">Follow & Connect</h4>
+              <div class="contact-social-icons">
+                <a href="https://github.com/dnyandevdaphal" target="_blank" rel="noopener noreferrer"
+                  class="social-pill" aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/dnyandev-daphal-530a01347" target="_blank"
+                  rel="noopener noreferrer" class="social-pill" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill"
+                  aria-label="Twitter">
+                  <i class="fa-brands fa-x-twitter"></i> Twitter
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Validated Contact Form -->
+          <div class="contact-form-panel" data-reveal>
+            <div class="contact-form-card">
+              <div class="form-header">
+                <h3 class="form-title">Send Me a Message</h3>
+                <p class="form-desc">Fill out the form below. Real-time validation active!</p>
+              </div>
+
+              <form id="portfolioContactForm" novalidate>
+                <!-- Name Field -->
+                <div class="form-group" id="groupName">
+                  <label for="userName" class="form-label">
+                    <span>Full Name</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="userName" name="name" class="form-control" placeholder="e.g. Alex Morgan"
+                      autocomplete="name" required>
+                    <span class="valid-status-icon" aria-hidden="true"></span>
+                  </div>
+                  <small class="error-msg" id="nameError"></small>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group" id="groupEmail">
+                  <label for="userEmail" class="form-label">
+                    <span>Email Address</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="userEmail" name="email" class="form-control"
+                      placeholder="alex.morgan@company.com" autocomplete="email" required>
+                    <span class="valid-status-icon" aria-hidden="true"></span>
+                  </div>
+                  <small class="error-msg" id="emailError"></small>
+                </div>
+
+                <!-- Subject & Project Type Row -->
+                <div class="form-row-dual">
+                  <div class="form-group" id="groupSubject">
+                    <label for="userSubject" class="form-label">
+                      <span>Subject</span>
+                      <span class="required-star">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <i class="fa-solid fa-pen-nib input-icon"></i>
+                      <input type="text" id="userSubject" name="subject" class="form-control"
+                        placeholder="e.g. Web App Development" required>
+                      <span class="valid-status-icon" aria-hidden="true"></span>
+                    </div>
+                    <small class="error-msg" id="subjectError"></small>
+                  </div>
+
+                  <div class="form-group" id="groupInquiryType">
+                    <label for="userInquiryType" class="form-label">
+                      <span>Inquiry Type</span>
+                    </label>
+                    <div class="input-wrapper select-wrapper">
+                      <i class="fa-solid fa-tag input-icon"></i>
+                      <select id="userInquiryType" name="inquiryType" class="form-control form-select">
+                        <option value="Full-time Job Opportunity">Full-time Job Opportunity</option>
+                        <option value="Freelance Web Project">Freelance Web Project</option>
+                        <option value="Technical Consulting">Technical Consulting</option>
+                        <option value="Code Review / Mentorship">Code Review / Mentorship</option>
+                        <option value="Just Saying Hello">Just Saying Hello 👋</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group" id="groupMessage">
+                  <div class="label-row">
+                    <label for="userMessage" class="form-label">
+                      <span>Your Message</span>
+                      <span class="required-star">*</span>
+                    </label>
+                    <span class="char-counter" id="charCounter">0 / 500</span>
+                  </div>
+                  <div class="input-wrapper">
+                    <textarea id="userMessage" name="message" class="form-control form-textarea" rows="4"
+                      placeholder="Hi Dnyandev, I loved your portfolio! We'd love to talk about our upcoming web application project..."
+                      maxlength="500" required></textarea>
+                  </div>
+                  <small class="error-msg" id="messageError"></small>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                  <button type="submit" id="submitContactBtn" class="btn btn-primary btn-submit w-full">
+                    <span class="btn-text">Send Message</span>
+                    <i class="fa-solid fa-paper-plane btn-icon"></i>
+                    <span class="btn-spinner" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" id="resetContactBtn" class="btn btn-glass btn-reset">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="portfolio-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo">
+            <span class="logo-bracket">&lt;</span>
+            <span class="logo-name">Dnyandev</span>
+            <span class="logo-accent">.dev</span>
+            <span class="logo-bracket">/&gt;</span>
+          </a>
+          <p class="footer-tagline">
+            Building intuitive, high-performance web experiences with modern architecture.
+          </p>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Social</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com/dnyandevdaphal" target="_blank" rel="noopener noreferrer"><i
+                  class="fa-brands fa-github"></i> GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/dnyandev-daphal-530a01347" target="_blank"
+                rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i
+                  class="fa-brands fa-x-twitter"></i> Twitter</a></li>
+            <li><a href="mailto:daphaldnyandev@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; <span id="currentYear">2026</span> Daphal Dnyandev. All rights reserved. Built with pure HTML, CSS &
+          JavaScript.
+        </p>
+        <div class="footer-badges">
+          <span class="tech-stack-tag">⚡ 100% Vanilla Tech</span>
+          <span class="tech-stack-tag">📱 Mobile First</span>
+          <span class="tech-stack-tag">🎨 Modern Glassmorphism</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top of page" title="Back to top">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-circle-bg" stroke="rgba(255,255,255,0.1)" stroke-width="3" fill="transparent" r="20"
+        cx="24" cy="24" />
+      <circle id="progressRingCircle" class="progress-ring-circle" stroke="var(--primary)" stroke-width="3"
+        fill="transparent" r="20" cx="24" cy="24" />
+    </svg>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- MODAL: PROJECT CASE STUDY DETAILS -->
+  <div id="projectModal" class="custom-modal" aria-hidden="true" role="dialog" aria-labelledby="modalProjectTitle">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-content glass-card">
+        <div class="modal-header">
+          <div class="modal-title-wrapper">
+            <span class="modal-badge" id="modalProjectCategory">Full Stack</span>
+            <h3 class="modal-title" id="modalProjectTitle">Project Title</h3>
+          </div>
+          <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-image-wrapper">
+            <img src="" alt="Project Preview" id="modalProjectImage" class="modal-preview-img">
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-subheading"><i class="fa-solid fa-circle-info"></i> Project Overview</h4>
+            <p id="modalProjectDesc" class="modal-text"></p>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-subheading"><i class="fa-solid fa-list-check"></i> Key Features Implemented</h4>
+            <ul id="modalProjectFeatures" class="modal-features-list"></ul>
+          </div>
+
+          <div class="modal-section">
+            <h4 class="modal-subheading"><i class="fa-solid fa-layer-group"></i> Architecture & Tech Stack</h4>
+            <div id="modalProjectStack" class="modal-tech-pills"></div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-outline" id="modalCloseBtnFooter">Close</button>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-glass"
+            id="modalGithubLink">
+            <i class="fa-brands fa-github"></i> View GitHub
+          </a>
+          <button class="btn btn-primary" id="modalSimulateLiveBtn">
+            <i class="fa-solid fa-rocket"></i> Launch Interactive Preview
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: RESUME VIEWER & DOWNLOAD -->
+  <div id="resumeModal" class="custom-modal" aria-hidden="true" role="dialog" aria-labelledby="resumeModalTitle">
+    <div class="modal-backdrop" id="resumeModalBackdrop"></div>
+    <div class="modal-dialog modal-dialog-lg">
+      <div class="modal-content glass-card resume-modal-card">
+        <div class="modal-header">
+          <div>
+            <h3 class="modal-title" id="resumeModalTitle">Curriculum Vitae</h3>
+            <p class="modal-subtitle">Daphal Dnyandev — Full Stack Web Developer & BCS Student</p>
+          </div>
+          <div class="resume-header-actions">
+            <button class="btn btn-sm btn-primary" id="printResumeBtn">
+              <i class="fa-solid fa-print"></i> Print / Save PDF
+            </button>
+            <button class="modal-close-btn" id="resumeModalCloseBtn" aria-label="Close resume dialog">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="modal-body resume-body" id="printableResumeArea">
+          <!-- Resume Content Structure -->
+          <div class="resume-sheet">
+            <!-- Resume Header -->
+            <div class="resume-hero">
+              <div>
+                <h1 class="resume-name">DAPHAL DNYANDEV</h1>
+                <p class="resume-role">BCS Student & Full Stack Web Developer</p>
+              </div>
+              <div class="resume-contact-meta">
+                <div><i class="fa-solid fa-location-dot"></i> Sambhajinagar, Maharashtra, India</div>
+                <div><i class="fa-solid fa-phone"></i> +91 8767774541</div>
+                <div><i class="fa-solid fa-envelope"></i> daphaldnyandev@gmail.com</div>
+                <div><i class="fa-brands fa-linkedin"></i> <a
+                    href="https://www.linkedin.com/in/dnyandev-daphal-530a01347" target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: inherit; text-decoration: none;">linkedin.com/in/dnyandev-daphal-530a01347</a></div>
+                <div><i class="fa-brands fa-github"></i> <a href="https://github.com/dnyandevdaphal" target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: inherit; text-decoration: none;">github.com/dnyandevdaphal</a></div>
+              </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="resume-section">
+              <h3 class="resume-sec-title">PROFESSIONAL SUMMARY</h3>
+              <p class="resume-p">
+                Dedicated BCS student and Full Stack Web Developer based in Sambhajinagar, passionate about
+                architecting,
+                developing, and deploying modern web applications. Proficient in modern JavaScript (ES6+), React,
+                Node.js, RESTful APIs, and responsive design systems. Committed to writing clean, maintainable code,
+                high performance, and exceptional UI/UX aesthetics.
+              </p>
+            </div>
+
+            <!-- Skills -->
+            <div class="resume-section">
+              <h3 class="resume-sec-title">TECHNICAL EXPERTISE</h3>
+              <div class="resume-skills-block">
+                <div><strong>Languages:</strong> JavaScript (ES6+), TypeScript, HTML5, CSS3, Python, SQL</div>
+                <div><strong>Frontend:</strong> React.js, Next.js, Redux Toolkit, Tailwind CSS, Responsive Design,
+                  WebSockets</div>
+                <div><strong>Backend:</strong> Node.js, Express.js, RESTful APIs, GraphQL, FastAPI, JWT Auth</div>
+                <div><strong>Databases:</strong> PostgreSQL, MongoDB, Redis, Prisma ORM</div>
+                <div><strong>DevOps & Tools:</strong> Docker, Git/GitHub, CI/CD Actions, AWS S3/EC2, Vercel, Figma</div>
+              </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="resume-section">
+              <h3 class="resume-sec-title">PROFESSIONAL EXPERIENCE</h3>
+
+              <div class="resume-job">
+                <div class="job-header">
+                  <div><strong>Senior Full Stack Web Developer</strong> — TechNova Innovations</div>
+                  <span class="job-dates">2024 – Present | Sambhajinagar, India</span>
+                </div>
+                <ul class="job-bullets">
+                  <li>Engineered high-scale SaaS web application serving 50,000+ monthly active users using React,
+                    Node.js, and PostgreSQL.</li>
+                  <li>Optimized frontend bundle size and caching strategy, cutting initial page load times by 42%.</li>
+                  <li>Implemented responsive mobile-first UI components compliant with WCAG accessibility guidelines.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="resume-job">
+                <div class="job-header">
+                  <div><strong>Frontend Software Engineer</strong> — PixelCraft Studio</div>
+                  <span class="job-dates">2022 – 2024 | Remote</span>
+                </div>
+                <ul class="job-bullets">
+                  <li>Developed 12+ responsive client websites and interactive portals using HTML5, CSS3, JavaScript,
+                    and React.</li>
+                  <li>Created dynamic form validation with regex and visual feedback, lowering form bounce rates by 35%.
+                  </li>
+                  <li>Collaborated closely with UI/UX designers to translate Figma design systems into pixel-perfect
+                    code.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Education -->
+            <div class="resume-section">
+              <h3 class="resume-sec-title">EDUCATION & CERTIFICATIONS</h3>
+              <div class="job-header">
+                <div><strong>Bachelor of Computer Science (BCS)</strong></div>
+                <span class="job-dates">Pursuing / Student</span>
+              </div>
+              <div class="resume-p">Dr. Babasaheb Ambedkar Marathwada University (BAMU), Chhatrapati Sambhajinagar</div>
+              <div class="resume-certs mt-2">
+                <div>• Full Stack Web Development Specialization</div>
+                <div>• Modern JavaScript & Responsive Web Applications</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-outline" id="resumeModalCloseBtnFooter">Close</button>
+          <button class="btn btn-primary" id="downloadResumeBtnAction">
+            <i class="fa-solid fa-file-arrow-down"></i> Download Resume (.txt / .pdf)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Three.js 3D Background Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Main Application Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
